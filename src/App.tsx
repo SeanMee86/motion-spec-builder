@@ -7,6 +7,7 @@ export type ArrayElementType<T extends readonly unknown[]> =
   T extends readonly (infer ElementType)[] ? ElementType : never;
 
 export type AppState = {
+  motionSpecTitle: string;
   timeColumn: {
     totalTime: number;
     timeIncrements: number;
@@ -22,6 +23,7 @@ export type AppState = {
 };
 
 function App() {
+  const [motionSpecTitle, setMotionSpecTitle] = useState("");
   const [timeColumn, setTimeColumns] = useState<AppState["timeColumn"]>({
     totalTime: 0,
     timeIncrements: 0,
@@ -32,12 +34,17 @@ function App() {
   return (
     <main className="flex">
       <SideBar
+        setMotionSpecTitle={setMotionSpecTitle}
         setAnimations={setAnimations}
         setTimeColumns={setTimeColumns}
         toggleModalOpen={toggleModalOpen}
         isModalOpen={isModalOpen}
       />
-      <Graph timeColumn={timeColumn} animations={animations} />
+      <Graph
+        motionSpecTitle={motionSpecTitle}
+        timeColumn={timeColumn}
+        animations={animations}
+      />
     </main>
   );
 }
