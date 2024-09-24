@@ -27,7 +27,7 @@ const Animation: React.FunctionComponent<IAnimationProps> = ({
     )}, ${Math.floor(Math.random() * 255)}`;
   }
   return (
-    <div className="my-4 relative" style={{ left }}>
+    <div className="my-4 z-10 relative" style={{ left }}>
       <p className="font-bold text-2xl text-left">{name}</p>
       <code className="text-left block">
         {prop}: {propTransitionStart} - {propTransitionEnd}

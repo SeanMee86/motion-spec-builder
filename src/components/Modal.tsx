@@ -38,7 +38,7 @@ const Modal: React.FunctionComponent<IModalProps> = ({
         {isModalOpen && (
           <Dialog.Content
             forceMount
-            className="fixed top-[50%] left-[50%] bg-white translate-x-[-50%] translate-y-[-50%] p-8 flex flex-col items-start z-10"
+            className="fixed top-[50%] left-[50%] bg-white translate-x-[-50%] translate-y-[-50%] p-8 flex flex-col items-start z-20"
           >
             <Dialog.Title className="font-bold text-2xl">
               Add Animation
