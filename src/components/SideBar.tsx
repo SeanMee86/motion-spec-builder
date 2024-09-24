@@ -43,6 +43,7 @@ const SideBar: React.FunctionComponent<ISideBarProps> = ({
           step="100"
           id="totalTime"
           min={0}
+          max={10000}
           onChange={(e) =>
             setTimeColumns((prevState) => ({
               ...prevState,
@@ -62,6 +63,7 @@ const SideBar: React.FunctionComponent<ISideBarProps> = ({
           step="100"
           id="timeIncrements"
           min={0}
+          max={10000}
           onChange={(e) =>
             setTimeColumns((prevState) => ({
               ...prevState,
