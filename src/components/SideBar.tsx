@@ -7,16 +7,12 @@ interface ISideBarProps {
   setMotionSpecTitle: Dispatch<SetStateAction<string>>;
   setAnimations: Dispatch<SetStateAction<AppState["animations"]>>;
   setTimeColumns: Dispatch<SetStateAction<AppState["timeColumn"]>>;
-  toggleModalOpen: Dispatch<SetStateAction<boolean>>;
-  isModalOpen: boolean;
 }
 
 const SideBar: React.FunctionComponent<ISideBarProps> = ({
   setMotionSpecTitle,
   setAnimations,
   setTimeColumns,
-  toggleModalOpen,
-  isModalOpen,
 }) => {
   return (
     <div className="flex flex-col gap-5 p-4">
@@ -74,8 +70,6 @@ const SideBar: React.FunctionComponent<ISideBarProps> = ({
       </div>
       <Modal
         setAnimations={setAnimations}
-        isModalOpen={isModalOpen}
-        toggleModalOpen={toggleModalOpen}
       />
     </div>
   );

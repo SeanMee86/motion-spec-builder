@@ -2,31 +2,21 @@ import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import Form from "./Form";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { AppState } from "../App";
 
 interface IModalProps {
   setAnimations: Dispatch<SetStateAction<AppState["animations"]>>;
-  toggleModalOpen: Dispatch<SetStateAction<boolean>>;
-  isModalOpen: boolean;
 }
 
-const Modal: React.FunctionComponent<IModalProps> = ({
-  toggleModalOpen,
-  isModalOpen,
-  setAnimations,
-}) => {
+const Modal: React.FunctionComponent<IModalProps> = ({ setAnimations }) => {
+  const [isModalOpen, toggleModalOpen] = useState(false);
+
   return (
     <div className="flex justify-center p-4">
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <button
-            onClick={() => {
-              toggleModalOpen(true);
-            }}
-          >
-            Add Animation
-          </button>
+          <button onClick={() => toggleModalOpen(true)}>Add Animation</button>
         </Dialog.Trigger>
         {isModalOpen && (
           <Dialog.Overlay
